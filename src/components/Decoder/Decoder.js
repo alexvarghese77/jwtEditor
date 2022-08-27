@@ -1,9 +1,9 @@
-import React from 'react';
-import Header from './Components/Header';
-import Payload from './Components/Payload';
-import Signature from './Components/Signature';
+import React from "react";
+import Header from "./Components/Header";
+import Payload from "./Components/Payload";
+import Signature from "./Components/Signature";
 const Decoder = ({ encodedData }) => {
-  const [header, payload, signature] = encodedData.split('.');
+  const [header, payload, signature] = encodedData.split(".");
   return (
     <div className="decoder">
       <div>

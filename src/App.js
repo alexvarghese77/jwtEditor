@@ -9,7 +9,7 @@ import utf8 from "utf8";
 import { CSVLink } from "react-csv";
 
 function App() {
-  const [encodedData, setEndcodedData] = useState(
+  const [encodedData, setEncodedData] = useState(
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
   );
   const [decodedData, setDecodedData] = useState();
@@ -50,7 +50,11 @@ function App() {
       let decodedHeader = JSON.parse(utf8.decode(base64.decode(header)));
       decodedHeader.alg = element;
 
-      const encodedHeader = base64.encode(JSON.stringify(decodedHeader));
+      let encodedHeader = base64.encode(JSON.stringify(decodedHeader));
+      //at end of header '=' should not come
+      if (encodedHeader.charAt(encodedHeader.length - 1) === "=") {
+        encodedHeader = encodedHeader.slice(0, encodedHeader.length - 1);
+      }
       dataToSet.push([[encodedHeader, payload, signature].join(".")]);
     });
     setCsvData(dataToSet);
@@ -74,7 +78,7 @@ function App() {
         </button>
         {isGenerated && (
           <CSVLink data={csvData} filename="JWT_Test_Sample">
-            Download
+            <button className="downloadBtn">Download</button>
           </CSVLink>
         )}
       </div>

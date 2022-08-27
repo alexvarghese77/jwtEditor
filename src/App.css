@@ -87,15 +87,33 @@
   padding: 10px;
 }
 
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .genrateTestBtn {
-  left: 47%;
+ 
   position: relative;
   background-color: lightskyblue;
   width: 200px;
   font-size: 15px;
-  font-style: bold;
+  font-weight: bold;
   height: 45px;
   color: white;
   border: none;
 }
 
+.downloadBtn {
+  
+  margin-left: 30px;
+  position: relative;
+  background-color: lightskyblue;
+  width: 200px;
+  font-size: 15px;
+  font-weight: bold;
+  height: 45px;
+  color: white;
+  border: none;
+}
