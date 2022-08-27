@@ -1,12 +1,12 @@
-import { useRef, useState } from "react";
-import "./App.css";
-import Header from "./components/Header/Header";
-import Decoder from "./components/Decoder/Decoder";
-import Encoder from "./components/Encoder/Encoder.js";
-import "./App.css";
-import base64 from "base-64";
-import utf8 from "utf8";
-import { CSVLink } from "react-csv";
+import { useRef, useState } from 'react';
+import './App.css';
+import Header from './components/Header/Header';
+import Decoder from './components/Decoder/Decoder';
+import Encoder from './components/Encoder/Encoder.js';
+import './App.css';
+import base64 from 'base-64';
+import utf8 from 'utf8';
+import { CSVLink } from 'react-csv';
 
 function App() {
   const [encodedData, setEncodedData] = useState(
@@ -17,9 +17,9 @@ function App() {
 
   const changeHandler = (evt) => {
     const encodedValue = encoderRef.current.innerText;
-    setDecodedData(encodedValue);
+    //setDecodedData(encodedValue);
 
-    //setEndcodedData(evt.target.value.replace(/<[^>]*>/g, ''));
+    setEncodedData(evt.target.value.replace(/<[^>]*>/g, ''));
   };
 
   const [csvData, setCsvData] = useState();
@@ -27,26 +27,26 @@ function App() {
 
   const generateTests = () => {
     const allNoneCombo = [
-      "NONE",
-      "NONe",
-      "NOnE",
-      "NOne",
-      "NoNE",
-      "NoNe",
-      "NonE",
-      "None",
-      "nONE",
-      "nONe",
-      "nOnE",
-      "nOne",
-      "noNE",
-      "noNe",
-      "nonE",
-      "none",
+      'NONE',
+      'NONe',
+      'NOnE',
+      'NOne',
+      'NoNE',
+      'NoNe',
+      'NonE',
+      'None',
+      'nONE',
+      'nONe',
+      'nOnE',
+      'nOne',
+      'noNE',
+      'noNe',
+      'nonE',
+      'none'
     ];
     const dataToSet = [];
     allNoneCombo.forEach((element) => {
-      const [header, payload, signature] = encodedData.split(".");
+      const [header, payload, signature] = encodedData.split('.');
       let decodedHeader = JSON.parse(utf8.decode(base64.decode(header)));
       decodedHeader.alg = element;
 

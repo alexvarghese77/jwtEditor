@@ -23,7 +23,7 @@ const Signature = ({signature}) => {
            <ContentEditable
              innerRef={headerRef}
              html={getSignatureData()} // innerHTML of the editable div
-             disabled={false} // use true to disable editing
+             disabled={true} // use true to disable editing
              onChange={onChangeHandler} // handle innerHTML change
              tagName="article" // Use a custom HTML tag (uses a div by default)
              className='decoder-content-style'
