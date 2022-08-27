@@ -1,4 +1,3 @@
-
 .navBar {
   background-color: #000000;
   height: 100px;
@@ -14,29 +13,28 @@
   padding-left: 80px;
 }
 
-.title{
+.title {
   margin-left: 6px;
 }
 
-.content-main{
+.content-main {
   padding: 80px 200px;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }
-.sub-heading{
+.sub-heading {
   font-size: 28px;
   font-weight: bold;
-
 }
-.sub-heading-metadata{
+.sub-heading-metadata {
   font-size: 12px;
-  color:#979797;
+  color: #979797;
   text-transform: uppercase;
   margin-left: 12px;
   font-weight: 300;
 }
 
-.main-container{
+.main-container {
   display: flex;
   border: 1px solid #979797;
   width: 100%;
@@ -45,45 +43,59 @@
   overflow: scroll;
   max-width: 750px;
 }
-.main-container-decorder{
+.main-container-decorder {
   flex-direction: column;
 }
-.encoder,.decoder{
-width: 100%;
-margin: 0 10px;
+.encoder,
+.decoder {
+  width: 100%;
+  margin: 0 10px;
 }
-.contenteditable{
+.contenteditable {
   overflow-wrap: anywhere;
   border: none;
   padding: 15px;
 }
-.red{
+.red {
   color: red;
 }
 
-.decoder-items{
-display: flex;
-flex-direction: column;
-width: 100%;
+.decoder-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.decoder-header{
-margin: 0;
-padding: 5px 4px;
-font-size: 15px;
-font-weight: bold;
+.decoder-header {
+  margin: 0;
+  padding: 5px 4px;
+  font-size: 15px;
+  font-weight: bold;
 }
-.decoder-subheading{
-  color:#979797;
+.decoder-subheading {
+  color: #979797;
   font-size: 12px;
 }
-.decoder-header-wrapper{
+.decoder-header-wrapper {
   display: flex;
   width: 100%;
   border-bottom: 1px solid #979797;
-  border-top: 1px solid #979797
+  border-top: 1px solid #979797;
 }
 
-.decoder-content-style{
+.decoder-content-style {
   padding: 10px;
 }
+
+.genrateTestBtn {
+  left: 47%;
+  position: relative;
+  background-color: lightskyblue;
+  width: 200px;
+  font-size: 15px;
+  font-style: bold;
+  height: 45px;
+  color: white;
+  border: none;
+}
+

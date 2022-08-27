@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import ContentEditable from 'react-contenteditable';
 
-const Encoder = ({ changeHandler, encodedData }) => {
-  const encoderRef = useRef();
+const Encoder = ({ changeHandler, encodedData, encoderRef }) => {
+ 
   const getEncodedToken = () => {
     const [header, payload, signature] = encodedData.split('.');
     return `<div>
