@@ -1,6 +1,9 @@
 import React from 'react';
-
-const Decoder = () => {
+import Header from './Components/Header';
+import Payload from './Components/Payload';
+import Signature from './Components/Signature';
+const Decoder = ({ encodedData }) => {
+  const [header, payload, signature] = encodedData.split('.');
   return (
     <div className="decoder">
       <div>
@@ -11,7 +14,11 @@ const Decoder = () => {
           </span>
         </p>
       </div>
-      <div className="main-container"></div>
+      <div className="main-container main-container-decorder">
+        <Header header={header} />
+        <Payload payload={payload} />
+        <Signature signature={signature} />
+      </div>
     </div>
   );
 };

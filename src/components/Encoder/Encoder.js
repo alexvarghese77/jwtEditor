@@ -1,12 +1,10 @@
 import React, { useRef } from 'react';
 import ContentEditable from 'react-contenteditable';
 
-const Encoder = ({ changeHandler }) => {
+const Encoder = ({ changeHandler, encodedData }) => {
   const encoderRef = useRef();
   const getEncodedToken = () => {
-    const token =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
-    const [header, payload, signature] = token.split('.');
+    const [header, payload, signature] = encodedData.split('.');
     return `<div>
         <b style="color:#fb015b;">${header}.</b><b style="color:#d63aff;">${payload}.</b><b style="color:#00b9f1;">${signature}</b>
       </div>`;

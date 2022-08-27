@@ -44,7 +44,9 @@
   min-height: 50vh;
   overflow: scroll;
   max-width: 750px;
-  /* padding: 20px; */
+}
+.main-container-decorder{
+  flex-direction: column;
 }
 .encoder,.decoder{
 width: 100%;
@@ -57,4 +59,31 @@ margin: 0 10px;
 }
 .red{
   color: red;
+}
+
+.decoder-items{
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+
+.decoder-header{
+margin: 0;
+padding: 5px 4px;
+font-size: 15px;
+font-weight: bold;
+}
+.decoder-subheading{
+  color:#979797;
+  font-size: 12px;
+}
+.decoder-header-wrapper{
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #979797;
+  border-top: 1px solid #979797
+}
+
+.decoder-content-style{
+  padding: 10px;
 }
