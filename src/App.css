@@ -38,12 +38,30 @@
 }
 
 .navBar {
-  background-color: black;
-  height: 200px;
+  background-color: #000000;
+  height: 150px;
   width: 100%;
 }
 
 .header {
   color: white;
   top: 30px;
+  position: absolute;
+  left: 30px;
+}
+
+.headText {
+  vertical-align: super
+}
+
+.bodyContainer {
+  
+}
+
+.boxContainer {
+  margin: 50px;
+}
+
+.textAreaEncode{
+  
 }
