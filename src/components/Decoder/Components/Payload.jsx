@@ -5,9 +5,7 @@ import utf8 from 'utf8';
 
 const Payload = ({payload}) => {
     const headerRef = useRef();
-    const getHeader=()=>{
-       return `<b>Hello</b>`
-    }
+  
     const onChangeHandler=(event) => {
         console.log("🚀 ~ file: Header.jsx ~ line 12 ~ onChangeHandler ~ event", event)
         return {
@@ -15,9 +13,12 @@ const Payload = ({payload}) => {
     }
 
     const getPayloadData=()=>{
-       
+      try{ 
        const payloadDecoded=payload?utf8.decode(base64.decode(payload)):''
         return `<b style="color:#d63aff;">${payloadDecoded}</b>`
+    } catch (error) {
+        return  `<b style="color:#fb015b;">invalid</b>`
+    }   
     }
     
      return (
