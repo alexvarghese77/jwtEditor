@@ -3,14 +3,26 @@ import ContentEditable from "react-contenteditable";
 import base64 from "base-64";
 import utf8 from "utf8";
 
-const Payload = ({ payload }) => {
+const Payload = ({
+  payload,
+  setEncodedData,
+  header,
+  signature,
+  setIsgenerated,
+}) => {
   const headerRef = useRef();
 
   const onChangeHandler = (event) => {
+    setIsgenerated(false);
     console.log(
       "🚀 ~ file: Header.jsx ~ line 12 ~ onChangeHandler ~ event",
       event
     );
+    let encodedPayload = base64.encode(
+      event.target.value.replace(/<[^>]*>/g, "")
+    );
+
+    setEncodedData([header, encodedPayload, signature].join("."));
     return {};
   };
 

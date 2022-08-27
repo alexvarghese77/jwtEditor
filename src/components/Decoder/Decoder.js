@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Components/Header";
 import Payload from "./Components/Payload";
 import Signature from "./Components/Signature";
-const Decoder = ({ encodedData }) => {
+const Decoder = ({ encodedData, setEncodedData, setIsgenerated }) => {
   const [header, payload, signature] = encodedData.split(".");
   return (
     <div className="decoder">
@@ -16,7 +16,13 @@ const Decoder = ({ encodedData }) => {
       </div>
       <div className="main-container main-container-decorder">
         <Header header={header} />
-        <Payload payload={payload} />
+        <Payload
+          payload={payload}
+          setEncodedData={setEncodedData}
+          header={header}
+          signature={signature}
+          setIsgenerated={setIsgenerated}
+        />
         <Signature signature={signature} />
       </div>
     </div>
