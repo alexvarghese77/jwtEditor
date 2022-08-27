@@ -1,34 +1,28 @@
-import "./App.css";
-import Header from "./components/Header/Header";
+import './App.css';
+import Header from './components/Header/Header';
+import Decoder from './components/Decoder/Decoder';
+import Encoder from './components/Encoder/Encoder.js';
+import './App.css';
+import base64 from 'base-64';
+import utf8 from 'utf8';
 
 function App() {
+  const input = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
+  var bytes = base64.decode(input);
+  var text = utf8.decode(bytes);
+  const changeHandler = (evt) => {
+    console.log(
+      '🚀 ~ file: Encoder.js ~ line 16 ~ changeHandler ~ evt',
+      evt.target.value.replace(/<[^>]*>/g, '')
+    );
+  };
   return (
     <div className="">
       <Header></Header>
-      <div className="bodyContainer">
-        <div className='boxContainer'>
-          <div>
-            Encoder
-            <textarea className="textAreaEncode"></textarea>
-          </div>
-          <div>
-            <div>
-              Decoded
-              <input></input>
-            </div>
-            <div>
-              Payload
-              <input></input>
-            </div>
-            <div>
-              Signature
-              <input></input>
-            </div>
-          </div>
-        </div>
-
-        <button>Generate Test</button>
-      </div>
+      <section className="content-main">
+        <Encoder changeHandler={changeHandler} />
+        <Decoder />
+      </section>
     </div>
   );
 }
